@@ -13,7 +13,7 @@ rm -rf /usr/share/doc/*
 yum -y update
 yum -y clean all
 yum -y install epel-release
-yum -y install gcc make gcc-c++ zlib-devel openssl-devel readline-devel sqlite-devel perl wget dkms nfs-utils bzip2
+yum -y install gcc make gcc-c++ zlib-devel openssl-devel readline-devel sqlite-devel perl wget dkms nfs-utils bzip2 yum-utils
 yum -y clean all
 
 # Delete stuff to keep the image small at any time -> better shrink
