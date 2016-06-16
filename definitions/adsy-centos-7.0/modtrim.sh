@@ -179,5 +179,6 @@ def main():
 if __name__ == '__main__':
 	main()
 EOF
+python /tmp/modtrim.py -l -f -i > /home/vagrant/trimmed-mods
 python /tmp/modtrim.py -l -f -i | xargs rm
 depmod -ae
