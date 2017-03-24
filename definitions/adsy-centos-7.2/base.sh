@@ -5,8 +5,10 @@ sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 # Delete stuff to keep the image small at any time -> better shrink
 rpm -qa | grep firmware | xargs yum -y erase
 rpm -qa | grep NetworkManager | xargs yum -y erase
+rpm -qa | grep firewalld | xargs yum -y erase
 rpm -qa | grep avahi | xargs yum -y erase
 rpm -qa | grep wpa_supplicant | xargs yum -y erase
+rpm -qa | grep ppp | xargs yum -y erase
 echo /usr/share/locale/* | tr ' ' '\n' | grep -E "/de_|/en_" | xargs rm -rf
 rm -rf /usr/share/doc/*
 
@@ -19,8 +21,10 @@ yum -y clean all
 # Delete stuff to keep the image small at any time -> better shrink
 rpm -qa | grep firmware | xargs yum -y erase
 rpm -qa | grep NetworkManager | xargs yum -y erase
+rpm -qa | grep firewalld | xargs yum -y erase
 rpm -qa | grep avahi | xargs yum -y erase
 rpm -qa | grep wpa_supplicant | xargs yum -y erase
+rpm -qa | grep ppp | xargs yum -y erase
 echo /usr/share/locale/* | tr ' ' '\n' | grep -E "/de_|/en_" | xargs rm -rf
 rm -rf /usr/share/doc/*
 
