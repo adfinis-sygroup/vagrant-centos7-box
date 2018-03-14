@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+sudo: true
+
+install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y vagrant qemu
+
+before_script:
+  - wget -O packer.zip https://releases.hashicorp.com/packer/1.2.1/packer_1.2.1_linux_amd64.zip
+  - unzip packer.zip
+  - rm -f packer.zip
+  - ls /usr/{,s}bin/*qemu*
+
+script:
+  - packer build --only qemu adsy-centos-7.json
+
+# vim: set ts=2 sw=2 :
